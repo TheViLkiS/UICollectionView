@@ -1,0 +1,25 @@
+//
+//  MenuCollectionViewCell.swift
+//  UICollectionView
+//
+//  Created by Дмитрий Гусев on 19.03.2023.
+//
+
+import UIKit
+
+class MenuCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    
+    var menu: Menu? {
+        didSet {
+            nameLabel.text = menu?.name
+            if let image = menu?.imageName {
+                imageView.image = UIImage(named: image)
+            }
+        }
+    }
+    
+    
+}
